@@ -12,7 +12,7 @@ import static com.byit.utils.ValidationAdaptation.checkPhone;
  * @author huangfu
  */
 @Log
-public class MobileNumberVerificationSelector implements ValidationSelector<MobileNumberVerification,Object>  {
+public class MobileNumberVerificationSelector implements ValidationSelector<MobileNumberVerification>  {
     @Override
     public void init(MobileNumberVerification annotation, Object value) {
         log.info("--------------------------@MobileNumberVerification进入初始化操作------------------------------");

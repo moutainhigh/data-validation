@@ -1,11 +1,13 @@
 package com.byit.selector.interfaces;
 
 
+import java.lang.annotation.Annotation;
+
 /**
  * 非空校验选择器接口，所有的校验规则都必须实现此接口
  * @author huangfu
  */
-public interface ValidationSelector<T,Object> {
+public interface ValidationSelector<T extends Annotation> {
     /**
      * 校验器初始化
      * @param annotation

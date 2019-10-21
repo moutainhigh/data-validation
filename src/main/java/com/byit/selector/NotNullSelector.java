@@ -11,7 +11,7 @@ import lombok.extern.java.Log;
  * @author huangfu
  */
 @Log
-public class NotNullSelector implements ValidationSelector<NotNull,Object> {
+public class NotNullSelector implements ValidationSelector<NotNull> {
     @Override
     public void init(NotNull annotation,Object object) {
         log.info("-------------------NotNull注解参数校验初始化-----------------");

@@ -11,7 +11,7 @@ import static com.byit.utils.ValidationAdaptation.dataNotBank;
  * @author huangfu
  */
 @Log
-public class NotBankSelector implements ValidationSelector<NotBank,Object> {
+public class NotBankSelector implements ValidationSelector<NotBank> {
     @Override
     public void init(NotBank annotation , Object object) {
         log.info("-------------------NotBank注解参数校验初始化-----------------");
