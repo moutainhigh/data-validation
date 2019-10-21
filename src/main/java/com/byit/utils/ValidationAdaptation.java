@@ -25,6 +25,8 @@ public class ValidationAdaptation {
      **/
     private static final String CHINA_MOBILE_PATTERN = "(?:^(?:\\+86)?1(?:3[4-9]|4[78]|5[0-27-9]|78|8[2-478]|98)\\d{8}$)|(?:^(?:\\+86)?1440\\d{7}$)|(?:^(?:\\+86)?170[356]\\d{7}$)";
 
+    private static final String EMAIL_PATTERN = "[\\w!#$%&'*+/=?^_`{|}~-]+(?:\\.[\\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?";
+
 
     /**
      * @NotNull 校验   非空校验
@@ -117,6 +119,19 @@ public class ValidationAdaptation {
     }
 
     /**
+     * 邮箱验证
+     * @param email
+     * @return
+     */
+    public static boolean emailValidation(String email){
+        if (StringUtils.isNotBlank(email)) {
+            Pattern regexp = Pattern.compile(EMAIL_PATTERN);
+            return regexp.matcher(email).matches();
+        }
+        return false;
+    }
+
+    /**
      * 隐藏手机号中间四位
      *
      * @param phone
@@ -128,5 +143,10 @@ public class ValidationAdaptation {
             phone = phone.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
         }
         return phone;
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(emailValidation("huangfusuper@163.com"));
     }
 }
