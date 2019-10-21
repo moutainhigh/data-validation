@@ -54,10 +54,11 @@ public class ParamValidationImpl {
                         Class<? extends ValidationSelector> validationClass = annotation.validationClass();
                         //创建实例
                         ValidationSelector validationSelectorImpl = validationClass.newInstance();
-                        //调用初始化方法
-                        validationSelectorImpl.init(annotations[j]);
+
                         //调用校验方法
                         declaredFields[i].setAccessible(true);
+                        //调用初始化方法
+                        validationSelectorImpl.init(annotations[j],declaredFields[i].get(object));
                         //调用验证器是否验证成功  false失败   true 成功
                         boolean valid = validationSelectorImpl.isValid(annotations[j], declaredFields[i].get(object));
                         if(!valid){

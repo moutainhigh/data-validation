@@ -26,7 +26,7 @@ public class NotParamValidationImpl {
             Class<? extends ValidationSelector> validationClass = metaAnnotation.validationClass();
 
             ValidationSelector validationSelector = validationClass.newInstance();
-            validationSelector.init(annotation);
+            validationSelector.init(annotation,value);
             boolean valid = validationSelector.isValid(annotation, value);
             //获取注解上的错误信息
             //获取本注解上的错误回调方法  获取错误提示信息

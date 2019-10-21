@@ -17,6 +17,6 @@ public class UserTestTest {
 
     @Test
     public void validation() {
-        userTest.validation(null);
+        userTest.validation(new User("123","18738102288"));
     }
 }
