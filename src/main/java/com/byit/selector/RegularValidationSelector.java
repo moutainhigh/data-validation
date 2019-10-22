@@ -3,7 +3,8 @@ package com.byit.selector;
 import com.byit.annotation.annotationselector.RegularValidation;
 import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
-import lombok.extern.java.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.regex.Pattern;
 
@@ -11,8 +12,9 @@ import java.util.regex.Pattern;
  * 正则匹配校验
  * @author huangfu
  */
-@Log
 public class RegularValidationSelector implements ValidationSelector<RegularValidation> {
+    private static final Logger log = LoggerFactory.getLogger(NotBankSelector.class);
+
     @Override
     public void init(RegularValidation annotation, Object value) {
         log.info("--------------------------------@RegularValidationSelector 初始化-----------------------------");

@@ -123,9 +123,4 @@ public class ValidationUtil {
         builder.append("#").append(methodName).append(":").append(defaultMessage);
         return builder.toString();
     }
-
-
-    public static void main(String[] args) {
-        System.out.println(hideMiddleMobile("18738102882"));
-    }
 }

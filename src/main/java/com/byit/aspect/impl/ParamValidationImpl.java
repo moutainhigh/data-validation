@@ -1,12 +1,8 @@
 package com.byit.aspect.impl;
 
-import com.byit.annotation.DataValidation;
 import com.byit.annotation.MetaAnnotation;
 import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

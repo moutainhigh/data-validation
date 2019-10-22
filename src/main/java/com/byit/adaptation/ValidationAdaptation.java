@@ -183,9 +183,4 @@ public class ValidationAdaptation {
         }
         return phone;
     }
-
-
-    public static void main(String[] args) {
-        System.out.println(hideMiddleMobile("18738022882"));
-    }
 }

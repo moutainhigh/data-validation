@@ -3,7 +3,8 @@ package com.byit.selector;
 import com.byit.annotation.annotationselector.MobileNumberVerification;
 import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
-import lombok.extern.java.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static com.byit.adaptation.ValidationAdaptation.checkPhone;
 
@@ -11,8 +12,8 @@ import static com.byit.adaptation.ValidationAdaptation.checkPhone;
  * 手机号校验规则
  * @author huangfu
  */
-@Log
 public class MobileNumberVerificationSelector implements ValidationSelector<MobileNumberVerification>  {
+    private static final Logger log = LoggerFactory.getLogger(MobileNumberVerificationSelector.class);
     @Override
     public void init(MobileNumberVerification annotation, Object value) {
         log.info("--------------------------@MobileNumberVerification进入初始化操作------------------------------");

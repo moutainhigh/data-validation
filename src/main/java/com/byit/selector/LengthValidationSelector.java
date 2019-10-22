@@ -4,7 +4,8 @@ import com.byit.annotation.annotationselector.LengthValidation;
 import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
 import com.byit.adaptation.ValidationAdaptation;
-import lombok.extern.java.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -12,9 +13,8 @@ import lombok.extern.java.Log;
  *
  * @author huangfu
  */
-@Log
 public class LengthValidationSelector implements ValidationSelector<LengthValidation> {
-
+    private static final Logger log = LoggerFactory.getLogger(LengthValidationSelector.class);
     @Override
     public void init(LengthValidation annotation, Object value) {
         log.info("---------------------------@LengthValidation初始化----------------------");
