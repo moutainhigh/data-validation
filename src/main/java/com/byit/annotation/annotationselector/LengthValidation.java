@@ -18,7 +18,23 @@ public @interface LengthValidation {
      * 错误信息
      * @return
      */
-    String errorMessage() default "长度不符合规定值";
+    String errorMessage() default "{com.byit.annotation.annotationselector.LengthValidation#errorMessage}";
 
-    int strLength();
+    /**
+     * 定长字符串
+     * @return
+     */
+    int strLength() default -1;
+
+    /**
+     * 最小长度
+     * @return
+     */
+    int minLength() default -1;
+
+    /**
+     * 最大长度
+     * @return
+     */
+    int maxLength() default -1;
 }

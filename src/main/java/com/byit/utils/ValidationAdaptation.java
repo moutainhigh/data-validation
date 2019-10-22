@@ -49,7 +49,7 @@ public class ValidationAdaptation {
     }
 
     /**
-     * 长度校验
+     * 长度校验 校验长度是否满足规定值
      * @param value 数值
      * @param length 标准长度
      * @return
@@ -59,6 +59,43 @@ public class ValidationAdaptation {
             return value.length() == length;
         }
         return false;
+    }
+
+    /**
+     * 长度校验  校验字符串长度是否小于规定值
+     * @param value
+     * @param minLength 最小长度
+     * @return
+     */
+    public static boolean minLengthValidation(String value,int minLength){
+        if(dataNotNull(value)){
+            return value.length() >= minLength;
+        }
+        return false;
+    }
+
+    /**
+     * 长度校验  校验字符串长度是否小于规定值
+     * @param value
+     * @param maxLength 最小长度
+     * @return
+     */
+    public static boolean maxLengthValidation(String value,int maxLength){
+        if(dataNotNull(value)){
+            return value.length() <= maxLength;
+        }
+        return false;
+    }
+
+    /**
+     * 长度校验  校验字符串是否在某一区间内   0>=100>=101
+     * @param value
+     * @param minLength
+     * @param maxLength
+     * @return
+     */
+    public static boolean intervalLengthValidation(String value,int minLength,int maxLength){
+        return minLengthValidation(value,minLength) && maxLengthValidation(value,maxLength);
     }
 
     /**
