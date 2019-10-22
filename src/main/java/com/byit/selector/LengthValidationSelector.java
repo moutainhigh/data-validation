@@ -3,7 +3,7 @@ package com.byit.selector;
 import com.byit.annotation.annotationselector.LengthValidation;
 import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
-import com.byit.utils.ValidationAdaptation;
+import com.byit.adaptation.ValidationAdaptation;
 import lombok.extern.java.Log;
 
 

@@ -1,4 +1,4 @@
-package com.byit.utils;
+package com.byit.adaptation;
 
 import org.apache.commons.lang3.StringUtils;
 

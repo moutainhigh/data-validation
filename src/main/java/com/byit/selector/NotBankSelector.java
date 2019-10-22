@@ -5,7 +5,7 @@ import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
 import lombok.extern.java.Log;
 
-import static com.byit.utils.ValidationAdaptation.dataNotBank;
+import static com.byit.adaptation.ValidationAdaptation.dataNotBank;
 
 /**
  * @author huangfu

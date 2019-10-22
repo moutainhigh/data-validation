@@ -5,7 +5,7 @@ import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
 import lombok.extern.java.Log;
 
-import static com.byit.utils.ValidationAdaptation.checkPhone;
+import static com.byit.adaptation.ValidationAdaptation.checkPhone;
 
 /**
  * 手机号校验规则

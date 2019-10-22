@@ -5,7 +5,7 @@ import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
 import lombok.extern.java.Log;
 
-import static com.byit.utils.ValidationAdaptation.emailValidation;
+import static com.byit.adaptation.ValidationAdaptation.emailValidation;
 
 /**
  * 邮箱格式校验
