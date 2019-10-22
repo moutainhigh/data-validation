@@ -5,6 +5,7 @@ import com.byit.annotation.ParamValidation;
 import com.byit.annotation.annotationselector.NotNull;
 import com.byit.aspect.impl.NotParamValidationImpl;
 import com.byit.aspect.impl.ParamValidationImpl;
+import com.byit.conf.ValidationCondition;
 import com.byit.exception.DataValidationException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -12,6 +13,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
@@ -22,6 +24,7 @@ import java.lang.reflect.Method;
  */
 @Component
 @Aspect
+@Conditional(ValidationCondition.class)
 public class CheckerAspect {
     private static final Logger log = LoggerFactory.getLogger(CheckerAspect.class);
 
