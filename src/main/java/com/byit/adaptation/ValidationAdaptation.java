@@ -186,6 +186,6 @@ public class ValidationAdaptation {
 
 
     public static void main(String[] args) {
-        System.out.println(emailValidation("huangfusuper@163.com"));
+        System.out.println(hideMiddleMobile("18738022882"));
     }
 }
