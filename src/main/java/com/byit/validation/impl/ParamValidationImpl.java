@@ -1,8 +1,11 @@
-package com.byit.aspect.impl;
+package com.byit.validation.impl;
 
 import com.byit.annotation.MetaAnnotation;
 import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
+import com.byit.validation.AbstractValidation;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -12,10 +15,14 @@ import java.lang.reflect.Method;
  * 这个是需要验证其内部属性是否通过校验的实现类
  * @author huangfu
  */
-public class ParamValidationImpl {
+@Component
+public class ParamValidationImpl extends AbstractValidation {
 
-
-
+    /**
+     * 校验实现
+     * @param object
+     */
+    @Override
     public void isValidation(Object object){
         try {
             //获取的是方法参数的类的对象

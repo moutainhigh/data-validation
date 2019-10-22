@@ -1,8 +1,10 @@
-package com.byit.aspect.impl;
+package com.byit.validation.impl;
 
 import com.byit.annotation.MetaAnnotation;
 import com.byit.exception.DataValidationException;
 import com.byit.selector.interfaces.ValidationSelector;
+import com.byit.validation.AbstractValidation;
+import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -11,14 +13,16 @@ import java.lang.reflect.Method;
  * 这个是不需要验证内部属性是否需要校验，只需要验证其本身是否通过规定校验的
  * @author huangfu
  */
-public class NotParamValidationImpl {
+@Component
+public class NotParamValidationImpl extends AbstractValidation {
 
 
     /**
-     *
-     * @param annotation
+     *校验实现
+     * @param annotation  参数上的注解
      * @param value
      */
+    @Override
     public void isValidation(Annotation annotation,Object value){
         try{
             //获取此注解上的元注解
