@@ -3,8 +3,9 @@ package com.byit.aspect;
 import com.byit.annotation.MetaAnnotation;
 import com.byit.annotation.ParamValidation;
 import com.byit.annotation.annotationselector.NotNull;
-import com.byit.aspect.impl.NotParamValidationImpl;
-import com.byit.aspect.impl.ParamValidationImpl;
+import com.byit.validation.Validation;
+import com.byit.validation.impl.NotParamValidationImpl;
+import com.byit.validation.impl.ParamValidationImpl;
 import com.byit.conf.ValidationCondition;
 import com.byit.exception.DataValidationException;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -13,6 +14,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Component;
 
@@ -28,6 +30,14 @@ import java.lang.reflect.Method;
 public class CheckerAspect {
     private static final Logger log = LoggerFactory.getLogger(CheckerAspect.class);
 
+    private final Validation notParamValidation;
+    private final Validation paramValidation;
+
+    @Autowired
+    public CheckerAspect(NotParamValidationImpl notParamValidation, ParamValidationImpl paramValidation) {
+        this.notParamValidation = notParamValidation;
+        this.paramValidation = paramValidation;
+    }
 
     @Around("@annotation(com.byit.annotation.DataValidation)")
     public Object dataValidation(ProceedingJoinPoint joinPoint) throws Throwable {
@@ -82,8 +92,8 @@ public class CheckerAspect {
                 //这里判断当前注解是否为ParamValidation.class
                 boolean isPresenceParamValidationAnnotation = annotation.annotationType().equals(ParamValidation.class);
                 if(isPresenceParamValidationAnnotation){
-                    ParamValidationImpl paramValidationImpl = new ParamValidationImpl();
-                    paramValidationImpl.isValidation(param);
+                    //ParamValidationImpl paramValidationImpl = new ParamValidationImpl();
+                    paramValidation.isValidation(param);
                     continue;
                 }
 
@@ -91,7 +101,7 @@ public class CheckerAspect {
                 boolean annotationPresent = annotation.annotationType().isAnnotationPresent(MetaAnnotation.class);
                 //如果存在
                 if(annotationPresent){
-                    NotParamValidationImpl notParamValidation = new NotParamValidationImpl();
+                    //NotParamValidationImpl notParamValidation = new NotParamValidationImpl();
                     notParamValidation.isValidation(annotation,param);
                     continue;
                 }

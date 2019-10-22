@@ -1,14 +1,26 @@
 package com.byit.utils;
 
 import com.byit.adaptation.ValidationAdaptation;
+import com.byit.validation.Validation;
+import com.byit.validation.impl.ParamValidationImpl;
 import com.byit.exception.DataValidationException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * 规则校验工具类
  * @author huangfu
  */
+@Component
 public class ValidationUtil {
+
     private static final String CLASS_NAME = ValidationUtil.class.getName();
+    private static Validation paramValidationImpl;
+
+    @Autowired
+    public ValidationUtil(ParamValidationImpl paramValidation) {
+        ValidationUtil.paramValidationImpl = paramValidation;
+    }
 
     /**
      * 非空校验
@@ -106,6 +118,14 @@ public class ValidationUtil {
         if(! ValidationAdaptation.emailValidation(email)){
             throw new DataValidationException(message);
         }
+    }
+
+    /**
+     * 实体类校验，校验规则依据实体类内的成员变量注解
+     * @param object
+     */
+    public static void modelIsAnnotationValidation(Object object){
+        paramValidationImpl.isValidation(object);
     }
 
     /**
