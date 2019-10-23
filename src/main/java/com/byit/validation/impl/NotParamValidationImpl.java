@@ -13,7 +13,6 @@ import java.lang.reflect.Method;
  * 这个是不需要验证内部属性是否需要校验，只需要验证其本身是否通过规定校验的
  * @author huangfu
  */
-@Component
 public class NotParamValidationImpl extends AbstractValidation {
 
 

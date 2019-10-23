@@ -15,7 +15,6 @@ import java.lang.reflect.Method;
  * 这个是需要验证其内部属性是否通过校验的实现类
  * @author huangfu
  */
-@Component
 public class ParamValidationImpl extends AbstractValidation {
 
     /**

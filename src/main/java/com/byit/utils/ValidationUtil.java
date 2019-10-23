@@ -7,20 +7,15 @@ import com.byit.exception.DataValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.swing.*;
+
 /**
  * 规则校验工具类
  * @author huangfu
  */
-@Component
 public class ValidationUtil {
 
     private static final String CLASS_NAME = ValidationUtil.class.getName();
-    private static Validation paramValidationImpl;
-
-    @Autowired
-    public ValidationUtil(ParamValidationImpl paramValidation) {
-        ValidationUtil.paramValidationImpl = paramValidation;
-    }
 
     /**
      * 非空校验
@@ -125,7 +120,7 @@ public class ValidationUtil {
      * @param object
      */
     public static void modelIsAnnotationValidation(Object object){
-        paramValidationImpl.isValidation(object);
+        SpringUtil.getBean(ParamValidationImpl.class).isValidation(object);
     }
 
     /**

@@ -22,7 +22,6 @@ import java.lang.reflect.Method;
 /**
  * @author huangfu
  */
-@Component
 @Aspect
 public class CheckerAspect {
     private static final Logger log = LoggerFactory.getLogger(CheckerAspect.class);
@@ -30,8 +29,7 @@ public class CheckerAspect {
     private final Validation notParamValidation;
     private final Validation paramValidation;
 
-    @Autowired
-    public CheckerAspect(NotParamValidationImpl notParamValidation, ParamValidationImpl paramValidation) {
+    public CheckerAspect(Validation notParamValidation, Validation paramValidation) {
         this.notParamValidation = notParamValidation;
         this.paramValidation = paramValidation;
     }
