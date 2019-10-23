@@ -2,7 +2,9 @@ package com.byit.selector;
 
 import com.byit.annotation.annotationselector.EmailValidation;
 import com.byit.exception.DataValidationException;
+import com.byit.properties.ValidationProperties;
 import com.byit.selector.interfaces.ValidationSelector;
+import com.byit.utils.SpringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
