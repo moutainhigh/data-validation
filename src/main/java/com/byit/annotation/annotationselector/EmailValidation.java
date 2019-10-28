@@ -19,5 +19,5 @@ public @interface EmailValidation {
      * 错误信息
      * @return
      */
-    String errorMessage() default "邮箱格式不正确";
+    String errorMessage() default "{com.byit.annotation.annotationselector.EmailValidation#errorMessage}";
 }

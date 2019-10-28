@@ -18,5 +18,5 @@ public @interface NotNull {
      * 错误信息
      * @return
      */
-    String errorMessage() default "此值不能为null";
+    String errorMessage() default "{com.byit.annotation.annotationselector.NotNull#NotNull}";
 }

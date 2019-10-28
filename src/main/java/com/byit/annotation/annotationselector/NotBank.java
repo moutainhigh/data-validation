@@ -14,5 +14,5 @@ public @interface NotBank {
      * 错误信息
      * @return
      */
-    String errorMessage() default "此值不能为null或者\"\"";
+    String errorMessage() default "{com.byit.annotation.annotationselector.NotBank#errorMessage}";
 }

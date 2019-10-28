@@ -19,5 +19,5 @@ public @interface MobileNumberVerification {
      * 错误信息
      * @return
      */
-    String errorMessage() default "手机号码不正确";
+    String errorMessage() default "{com.byit.annotation.annotationselector.MobileNumberVerification#errorMessage}";
 }

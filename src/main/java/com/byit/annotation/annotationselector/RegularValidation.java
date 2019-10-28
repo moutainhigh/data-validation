@@ -19,7 +19,7 @@ public @interface RegularValidation {
      * 错误信息
      * @return
      */
-    String errorMessage() default "与指定的正则表达式不匹配";
+    String errorMessage() default "{com.byit.annotation.annotationselector.RegularValidation#errorMessage}";
 
     /**
      * 正则表达式
